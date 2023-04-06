@@ -12,70 +12,6 @@ const LoginPage = () => {
         </svg>
         `,
       }),
-      //   El({
-      //     element: "div",
-      //     className: "flex flex-col gap-y-8",
-      //     child: [
-      //       El({
-      //         element: "h1",
-      //         child: "Login to Your Account",
-      //         className: "text-3xl font-medium",
-      //       }),
-      //       El({
-      //         element: "div",
-      //         child: [
-      //           El({
-      //             element: "input",
-      //             type: "email",
-      //             placeholder: "Email",
-      //             className:
-      //               "bg-gray-50 rounded w-full py-2 pl-8 focus:outline-black relative",
-      //           }),
-      //           El({
-      //             element: "ion-icon",
-      //             name: "mail",
-      //             className: "absolute left-10 mt-3 text-gray-500",
-      //           }),
-      //         ],
-      //       }),
-      //       El({
-      //         element: "div",
-      //         child: [
-      //           El({
-      //             element: "input",
-      //             type: "password",
-      //             placeholder: "Password",
-      //             className:
-      //               "bg-gray-50 rounded w-full py-2 pl-8 focus:outline-black",
-      //           }),
-      //           El({
-      //             element: "ion-icon",
-      //             name: "lock-closed",
-      //             className: "absolute left-10 mt-3 text-gray-500",
-      //           }),
-      //           El({
-      //             element: "ion-icon",
-      //             name: "eye-off",
-      //             className: "absolute right-10 mt-3 text-gray-500",
-      //           }),
-      //         ],
-      //       }),
-      //       El({
-      //         element: "div",
-      //         className: "flex self-center gap-x-2",
-      //         child: [
-      //           El({
-      //             element: "input",
-      //             type: "checkbox",
-      //           }),
-      //           El({
-      //             element: "span",
-      //             child: "Remember me",
-      //           }),
-      //         ],
-      //       }),
-      //     ],
-      //   }),
       El({
         element: "div",
         className: "flex flex-col gap-y-8",
@@ -133,7 +69,7 @@ const LoginPage = () => {
               El({
                 element: "input",
                 type: "checkbox",
-                className: "mr-2",
+                className: "mr-2 checked:bg-black",
               }),
               El({
                 element: "span",
@@ -154,3 +90,85 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+// const LoginPage = () => {
+//   return El({
+//     element: "div",
+//     className: "h-screen bg-white flex flex-col justify-around items-center",
+//     child: [
+//       El({
+//         element: "div",
+//         className: "flex flex-col gap-y-8",
+//         child: [
+//           El({
+//             element: "h1",
+//             child: "Login to Your Account",
+//             className: "text-3xl font-medium",
+//           }),
+//           El({
+//             element: "div",
+//             className: "relative",
+//             child: [
+//               El({
+//                 element: "input",
+//                 type: "email",
+//                 placeholder: "Email",
+//                 className:
+//                   "bg-gray-50 rounded w-full py-2 pl-12 focus:outline-black",
+//               }),
+//               El({
+//                 element: "ion-icon",
+//                 name: "mail",
+//                 className: "absolute left-4 top-3 text-gray-500",
+//               }),
+//             ],
+//           }),
+//           El({
+//             element: "div",
+//             className: "relative",
+//             child: [
+//               El({
+//                 element: "input",
+//                 type: "password",
+//                 placeholder: "Password",
+//                 className:
+//                   "bg-gray-50 rounded w-full py-2 pl-12 focus:outline-black",
+//               }),
+//               El({
+//                 element: "ion-icon",
+//                 name: "lock-closed",
+//                 className: "absolute left-4 top-3 text-gray-500",
+//               }),
+//               El({
+//                 element: "ion-icon",
+//                 name: "eye-off",
+//                 className: "absolute right-4 top-3 text-gray-500",
+//               }),
+//             ],
+//           }),
+//           El({
+//             element: "label",
+//             className: "flex self-center",
+//             child: [
+//               El({
+//                 element: "input",
+//                 type: "checkbox",
+//                 className: "mr-2",
+//               }),
+//               El({
+//                 element: "span",
+//                 child: "Remember me",
+//                 className: "font-light",
+//               }),
+//             ],
+//           }),
+//         ],
+//       }),
+//       El({
+//         element: "button",
+//         child: "Sign In",
+//         className: "text-white bg-black py-2 w-[90%] rounded-full",
+//       }),
+//     ],
+//   });
+// };

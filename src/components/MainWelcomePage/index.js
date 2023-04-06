@@ -10,5 +10,4 @@ const MainWelcomePage = () => {
     }),
   });
 };
-
 export default MainWelcomePage;
