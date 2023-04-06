@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "eslint-config-prettier": "^8.7.0",
+    "navigo": "^8.11.1",
+    "swiper": "^9.2.0",
     "vite-jsconfig-paths": "^2.0.1"
   }
 }

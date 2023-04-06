@@ -1,5 +1,5 @@
-import App from "./src/App";
-// import "./src/styles/index.css";
+import App from "./src/App.js";
+// import "src/styles/style.css";
 
 const root = document.getElementById("app");
 root.appendChild(App());

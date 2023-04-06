@@ -4,4 +4,7 @@ import jsconfigPaths from "vite-jsconfig-paths";
 
 export default defineConfig({
   plugins: [eslint(), jsconfigPaths()],
+  server: {
+    port: 5180,
+  },
 });
