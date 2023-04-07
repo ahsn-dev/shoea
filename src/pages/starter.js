@@ -1,6 +1,6 @@
 import El from "@/library/El";
 
-const FirstPage = () => {
+const starter = () => {
   return El({
     element: "div",
     className: "h-screen bg-white flex flex-col justify-around items-center",
@@ -21,4 +21,4 @@ const FirstPage = () => {
   });
 };
 
-export default FirstPage;
+export default starter;

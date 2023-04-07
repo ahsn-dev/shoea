@@ -1,6 +1,6 @@
 import El from "@/library/El";
 
-const MainWelcomePage = () => {
+const welcome = () => {
   return El({
     element: "div",
     child: El({
@@ -10,4 +10,4 @@ const MainWelcomePage = () => {
     }),
   });
 };
-export default MainWelcomePage;
+export default welcome;
