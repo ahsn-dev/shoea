@@ -1,10 +1,10 @@
 import El from "./library/El";
-import login from "./pages/login";
+import cart from "./pages/cart";
 
 const App = () => {
   const app = El({
     element: "div",
-    child: [login()],
+    child: [cart()],
   });
 
   return app;
