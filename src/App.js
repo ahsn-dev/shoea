@@ -1,10 +1,10 @@
 import El from "./library/El";
-import cart from "./pages/cart";
+import search from "./pages/search";
 
 const App = () => {
   const app = El({
     element: "div",
-    child: [cart()],
+    child: [search()],
   });
 
   return app;

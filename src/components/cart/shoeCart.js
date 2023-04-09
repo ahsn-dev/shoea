@@ -16,7 +16,7 @@ const shoeCart = () => {
               "w-24 h-24 bg-gray-100 rounded-3xl flex justify-center items-center",
             child: El({
               element: "img",
-              src: "public/assets/images/shoe.png",
+              src: "/assets/images/shoe.png",
               className: "p-1",
             }),
           }),

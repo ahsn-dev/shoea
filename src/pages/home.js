@@ -1,6 +1,6 @@
 import El from "@/library/El";
 import homeNavbar from "@/components/home/navbar";
-import homeSearch from "@/components/home/search";
+import homeSearch from "@/components/home/searchBar";
 import brandsCategory from "@/components/home/brandsCategory";
 import filterBrands from "@/components/home/filterBrands";
 import shoe from "@/components/cart/shoe";

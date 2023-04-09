@@ -21,7 +21,7 @@ const cart = () => {
                 child: [
                   El({
                     element: "img",
-                    src: "public/assets/images/logo.png",
+                    src: "/assets/images/logo.png",
                     className: "w-4 h-4",
                   }),
                   El({

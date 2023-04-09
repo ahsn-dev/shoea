@@ -10,7 +10,7 @@ const homeSearch = () => {
         type: "text",
         placeholder: "Search",
         className:
-          "py-2 w-full pl-10 bg-slate-50 placeholder:text-slate-300 rounded focus:outline-gray-400",
+          "py-2 w-full pl-10 bg-slate-50 placeholder:text-slate-300 text-slate-500 rounded border-none focus:ring-gray-400",
       }),
       El({
         element: "ion-icon",

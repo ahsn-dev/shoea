@@ -3,32 +3,32 @@ import El from "@/library/El";
 const shoe = () => {
   const items = [
     {
-      imgSrc: "public/assets/images/shoe.png",
+      imgSrc: "/assets/images/shoe.png",
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
     {
-      imgSrc: "public/assets/images/shoe2.png",
+      imgSrc: "/assets/images/shoe2.png",
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
     {
-      imgSrc: "public/assets/images/shoe.png",
+      imgSrc: "/assets/images/shoe.png",
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
     {
-      imgSrc: "public/assets/images/shoe2.png",
+      imgSrc: "/assets/images/shoe2.png",
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
     {
-      imgSrc: "public/assets/images/shoe.png",
+      imgSrc: "/assets/images/shoe.png",
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
     {
-      imgSrc: "public/assets/images/shoe2.png",
+      imgSrc: "/assets/images/shoe2.png",
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
