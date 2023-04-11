@@ -1,10 +1,10 @@
 import El from "./library/El";
-import search from "./pages/search";
+import login from "./pages/login";
 
 const App = () => {
   const app = El({
     element: "div",
-    child: [search()],
+    child: [login()],
   });
 
   return app;
