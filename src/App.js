@@ -1,10 +1,10 @@
 import El from "./library/El";
-import login from "./pages/login";
+import checkout from "./pages/checkout";
 
 const App = () => {
   const app = El({
     element: "div",
-    child: [login()],
+    child: [checkout()],
   });
 
   return app;

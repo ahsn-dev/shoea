@@ -1,7 +1,6 @@
 import El from "@/library/El";
-import counter from "../counter";
 
-const shoeCart = () => {
+const shoeCart = (deleteButton, variableItems) => {
   return El({
     element: "div",
     child: El({
@@ -23,29 +22,22 @@ const shoeCart = () => {
         }),
         El({
           element: "div",
-          className: "flex flex-col w-full gap-y-3",
+          className: "flex flex-col w-full gap-y-3 ml-4",
           child: [
             El({
               element: "div",
-              className: "flex items-center w-full justify-around pl-1",
+              className: "flex items-center w-full justify-between",
               child: [
                 El({
                   element: "h2",
                   child: "Air Jordan 3 Retro",
                 }),
-                El({
-                  element: "button",
-                  className: "flex items-center",
-                  child: El({
-                    element: "ion-icon",
-                    name: "trash-outline",
-                  }),
-                }),
+                deleteButton,
               ],
             }),
             El({
               element: "div",
-              className: "flex items-center gap-x-2 pl-4",
+              className: "flex items-center gap-x-2",
               child: [
                 El({
                   element: "div",
@@ -71,13 +63,13 @@ const shoeCart = () => {
             }),
             El({
               element: "div",
-              className: "flex justify-around items-center gap-x-10 pl-4",
+              className: "flex justify-between items-center gap-x-10",
               child: [
                 El({
                   element: "span",
                   child: "$105.00",
                 }),
-                counter(),
+                variableItems,
               ],
             }),
           ],

@@ -1,11 +1,13 @@
+import removeItem from "@/components/cart/removeItem";
 import shoeCart from "@/components/cart/shoeCart";
+import counter from "@/components/cart/counter";
 import footer from "@/components/home/footer";
 import El from "@/library/El";
 
 const cart = () => {
   return El({
     element: "div",
-    className: "bg-gray-100 w-full h-full",
+    className: "bg-gray-100 w-full h-screen",
     child: [
       El({
         element: "div",
@@ -47,19 +49,11 @@ const cart = () => {
           }),
         ],
       }),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
-      shoeCart(),
+      shoeCart(removeItem(), counter()),
       El({
         element: "div",
         className:
-          "fixed bottom-[88px] w-full flex justify-center items-center pl-4 py-4 bg-white rounded-tl-2xl rounded-tr-2xl",
+          "fixed bottom-16 w-full flex justify-center items-center pl-4 py-4 bg-white rounded-tl-2xl rounded-tr-2xl",
         child: [
           El({
             element: "div",
@@ -99,7 +93,7 @@ const cart = () => {
       El({
         element: "div",
         child: footer(),
-        className: "bg-white bottom-0 fixed mb-0 w-full h-24 font-light",
+        // className: "bg-white bottom-0 fixed mb-0 w-full h-24 font-light",
       }),
     ],
   });
