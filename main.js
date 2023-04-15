@@ -1,5 +1,13 @@
 import App from "./src/App.js";
-// import "src/styles/style.css";
+import Router from "./src/functions/router";
+// import { settingSwipper } from "./src/components/slider/swiper/index";
 
-const root = document.getElementById("app");
-root.appendChild(App());
+const rootApp = document.getElementById("app");
+
+rootApp.appendChild(App());
+Router().navigate("/");
+setTimeout(() => {
+  Router().navigate("/welcome");
+}, 2000);
+
+// settingSwipper();

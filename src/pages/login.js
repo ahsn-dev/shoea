@@ -1,5 +1,6 @@
 import El from "@/library/El";
 import validation from "@/functions/validation";
+import validationUserData from "@/functions/validationUserData";
 import "flowbite";
 
 const login = () => {
@@ -40,6 +41,9 @@ const login = () => {
     className:
       "text-white bg-black opacity-50 py-2 w-4/5 rounded-full bottom-0 absolute mb-8",
     disabled: true,
+    onclick: () => {
+      validationUserData(emailInput.value, passwordInput.value);
+    },
   });
 
   emailInput.addEventListener("input", () => {
@@ -153,6 +157,13 @@ const login = () => {
                 child: "Remember Me",
               }),
             ],
+          }),
+          El({
+            element: "span",
+            id: "inputError",
+            className:
+              "flex justify-center items-center text-red-500 text-xl hidden",
+            child: "Wrong Email or Password!",
           }),
           signInButton,
         ],
