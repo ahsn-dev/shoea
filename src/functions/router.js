@@ -1,11 +1,9 @@
 import Navigo from "navigo";
 import starter from "../pages/starter";
 import welcome from "../pages/welcome";
+import slider from "@/pages/slider";
 import login from "@/pages/login";
 import home from "@/pages/home";
-// import { slider } from "@/pages/slider";
-import { StartSlider } from "@/pages/slider";
-import { configSwiper } from "@/pages/slider";
 
 const Router = () => {
   const root = document.getElementById("root");
@@ -20,14 +18,8 @@ const Router = () => {
     })
     .on("/slider", () => {
       root.innerHTML = "";
-      root.append(StartSlider());
-      configSwiper();
+      root.append(slider());
     })
-    // .on("/swiper", () => {
-    //   settingSwipper();
-    //   root.innerHTML = "";
-    //   root.append(slider());
-    // })
     .on("/login", () => {
       root.innerHTML = "";
       root.append(login());

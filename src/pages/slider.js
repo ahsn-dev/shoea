@@ -5,19 +5,19 @@ import Swiper from "swiper/bundle";
 const slides = [
   {
     text: "We provide high quality products just for you",
-    src: "public/assets/images/carousel-1.png",
+    src: "public/assets/images/welcome-1.png",
   },
   {
     text: "Your satisfaction is our number one priority",
-    src: "public/assets/images/carousel-2.png",
+    src: "public/assets/images/welcome-2.png",
   },
   {
     text: "Let’s fulfill your fashion needs with shoea right now!",
-    src: "public/assets/images/carousel-3.png",
+    src: "public/assets/images/welcome-3.png",
   },
 ];
 
-export const slider = (slide) => {
+const mySlides = (slide) => {
   return El({
     element: "div",
     className: "swiper-slide w-full flex flex-col",
@@ -48,8 +48,8 @@ export const slider = (slide) => {
     ],
   });
 };
-export const configSwiper = () => {
-  // let swiper =
+
+const configSwiper = () => {
   new Swiper(".swiper", {
     pagination: {
       el: ".swiper-pagination",
@@ -57,7 +57,8 @@ export const configSwiper = () => {
     allowTouchMove: false,
   });
 };
-export const StartSlider = () => {
+
+const slider = () => {
   setTimeout(configSwiper, 0);
   return El({
     element: "div",
@@ -74,7 +75,7 @@ export const StartSlider = () => {
             className: "swiper-wrapper mb-10",
             child: [
               ...slides.map((item) => {
-                return slider(item);
+                return mySlides(item);
               }),
             ],
           }),
@@ -90,7 +91,7 @@ export const StartSlider = () => {
         child: [
           El({
             element: "button",
-            className: "w-full bg-dark p-4 text-white rounded-full",
+            className: "w-full bg-black p-4 text-white rounded-full",
             child: "Next",
             eventListener: [
               {
@@ -113,3 +114,5 @@ export const StartSlider = () => {
     ],
   });
 };
+
+export default slider;
