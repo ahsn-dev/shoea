@@ -11,8 +11,8 @@ const validationUserData = (email, pass) => {
       root.append(starter());
 
       setTimeout(() => {
-        const starter = document.getElementById("starter");
-        starter.classList.add("-translate-x-full");
+        // const starter = document.getElementById("starter");
+        // starter.classList.add("-translate-x-full");
         Router().navigate("/home");
       }, 2000);
     } else {
