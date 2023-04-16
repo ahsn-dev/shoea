@@ -2,6 +2,7 @@ import El from "@/library/El";
 import validation from "@/functions/validation";
 import validationUserData from "@/functions/validationUserData";
 import "flowbite";
+import Router from "@/functions/router";
 
 const login = () => {
   const togglePassword = () => {
@@ -79,6 +80,9 @@ const login = () => {
         className: "w-full pt-5 pl-8",
         child: El({
           element: "button",
+          onclick: () => {
+            Router().navigate("/slider");
+          },
           child: El({
             element: "ion-icon",
             name: "arrow-back",

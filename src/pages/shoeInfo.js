@@ -1,7 +1,9 @@
 import counter from "@/components/cart/counter";
+import Router from "@/functions/router";
 import El from "@/library/El";
 
 const shoeInfo = () => {
+  //   let totalPrice = 0;
   // add tick to the buttons of color section
   function addTick(button) {
     const buttons = document.querySelectorAll("button");
@@ -44,7 +46,7 @@ const shoeInfo = () => {
         element: "button",
         className: "absolute top-6 left-6",
         onclick: () => {
-          history.back();
+          Router().navigate("/home");
         },
         child: El({
           element: "ion-icon",
@@ -297,7 +299,8 @@ const shoeInfo = () => {
                   }),
                   El({
                     element: "span",
-                    child: "$585.00",
+                    id: "totalPriceSpan",
+                    child: "$0",
                     className: "font-bold text-lg",
                   }),
                 ],

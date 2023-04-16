@@ -1,11 +1,11 @@
 import El from "./library/El";
-import shoeInfo from "./pages/shoeInfo";
+import home from "./pages/home";
 
 const App = () => {
   const app = El({
     element: "div",
-    // id: "root",
-    child: [shoeInfo()],
+    id: "root",
+    child: [home()],
   });
 
   return app;

@@ -1,3 +1,4 @@
+import Router from "@/functions/router";
 import El from "@/library/El";
 
 const shoe = () => {
@@ -40,6 +41,9 @@ const shoe = () => {
     child: items.map((item) => {
       return El({
         element: "div",
+        onclick: () => {
+          Router().navigate("/shoeInfo");
+        },
         className: "mb-6",
         child: [
           El({

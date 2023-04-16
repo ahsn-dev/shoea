@@ -4,6 +4,7 @@ import welcome from "../pages/welcome";
 import slider from "@/pages/slider";
 import login from "@/pages/login";
 import home from "@/pages/home";
+import shoeInfo from "@/pages/shoeInfo";
 
 const Router = () => {
   const root = document.getElementById("root");
@@ -27,6 +28,10 @@ const Router = () => {
     .on("/home", () => {
       root.innerHTML = "";
       root.append(home());
+    })
+    .on("/shoeInfo", () => {
+      root.innerHTML = "";
+      root.append(shoeInfo());
     })
     .notFound(() => {
       console.log("page not found!!!");

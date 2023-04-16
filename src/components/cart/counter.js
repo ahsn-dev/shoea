@@ -27,16 +27,27 @@ const counter = (width = "w-7", height = "h-7", fontSize = "text-sm") => {
       className: `align-text-bottom ${fontSize}`,
     }),
   });
+
   decrementBtn.addEventListener("click", () => {
     if (count > 0) {
       count--;
       countEl.textContent = count.toString();
+      const x = calculatePrice(count);
+      document.getElementById("totalPriceSpan").innerHTML = x;
     }
   });
+
   incrementBtn.addEventListener("click", () => {
     count++;
     countEl.textContent = count.toString();
+    const x = calculatePrice(count);
+    document.getElementById("totalPriceSpan").innerHTML = x;
   });
+
+  function calculatePrice(num, price = 100) {
+    return `$${num * price}`;
+  }
+
   return El({
     element: "div",
     child: El({
