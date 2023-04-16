@@ -7,31 +7,31 @@ const shoe = () => {
       title: "K-Swiss ista Train...",
       price: "$ 85.00",
     },
-    {
-      imgSrc: "/assets/images/shoe2.png",
-      title: "K-Swiss ista Train...",
-      price: "$ 85.00",
-    },
-    {
-      imgSrc: "/assets/images/shoe.png",
-      title: "K-Swiss ista Train...",
-      price: "$ 85.00",
-    },
-    {
-      imgSrc: "/assets/images/shoe2.png",
-      title: "K-Swiss ista Train...",
-      price: "$ 85.00",
-    },
-    {
-      imgSrc: "/assets/images/shoe.png",
-      title: "K-Swiss ista Train...",
-      price: "$ 85.00",
-    },
-    {
-      imgSrc: "/assets/images/shoe2.png",
-      title: "K-Swiss ista Train...",
-      price: "$ 85.00",
-    },
+    // {
+    //   imgSrc: "/assets/images/shoe2.png",
+    //   title: "K-Swiss ista Train...",
+    //   price: "$ 85.00",
+    // },
+    // {
+    //   imgSrc: "/assets/images/shoe.png",
+    //   title: "K-Swiss ista Train...",
+    //   price: "$ 85.00",
+    // },
+    // {
+    //   imgSrc: "/assets/images/shoe2.png",
+    //   title: "K-Swiss ista Train...",
+    //   price: "$ 85.00",
+    // },
+    // {
+    //   imgSrc: "/assets/images/shoe.png",
+    //   title: "K-Swiss ista Train...",
+    //   price: "$ 85.00",
+    // },
+    // {
+    //   imgSrc: "/assets/images/shoe2.png",
+    //   title: "K-Swiss ista Train...",
+    //   price: "$ 85.00",
+    // },
   ];
 
   return El({

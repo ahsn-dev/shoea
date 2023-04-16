@@ -114,7 +114,7 @@ const wishlist = () => {
                 child: [
                   El({
                     element: "ion-icon",
-                    name: "star-half-outline",
+                    name: "star-half",
                     className: "text-base",
                   }),
                   El({

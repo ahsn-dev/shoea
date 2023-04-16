@@ -27,6 +27,9 @@ const Router = () => {
     .on("/home", () => {
       root.innerHTML = "";
       root.append(home());
+    })
+    .notFound(() => {
+      console.log("page not found!!!");
     });
   route.resolve();
   return route;
