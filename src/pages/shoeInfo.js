@@ -3,13 +3,12 @@ import Router from "@/functions/router";
 import El from "@/library/El";
 
 const shoeInfo = () => {
-  //   let totalPrice = 0;
   // add tick to the buttons of color section
   function addTick(button) {
     const buttons = document.querySelectorAll("button");
     buttons.forEach((btn) => {
       if (btn !== button) {
-        const ticks = btn.querySelectorAll("ion-icon");
+        const ticks = btn.querySelectorAll(".tick");
         ticks.forEach((tick) => tick.remove());
       }
     });
@@ -18,7 +17,7 @@ const shoeInfo = () => {
       element: "ion-icon",
       name: "checkmark",
       className:
-        "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+        "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white tick",
     });
 
     button.appendChild(svg);
@@ -38,9 +37,8 @@ const shoeInfo = () => {
 
   return El({
     element: "div",
-    id: "",
     className:
-      "w-screen h-screen absolute flex flex-col bg-white divide-y divide-slate-200",
+      "w-screen h-screen flex flex-col bg-white divide-y divide-slate-200",
     child: [
       El({
         element: "button",
@@ -55,7 +53,7 @@ const shoeInfo = () => {
       }),
       El({
         element: "div",
-        className: "h-2/5 w-full",
+        className: "h-1/2 w-full",
         child: [
           El({
             element: "img",
@@ -127,17 +125,32 @@ const shoeInfo = () => {
             child: ["Description"],
           }),
           El({
-            element: "p",
-            className: "font-light",
-            child: [
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente magni excepturi ",
-              El({
-                element: "span",
-                className: "font-medium",
-                child: ["view more.."],
-              }),
-            ],
+            element: "div",
+            child: El({
+              element: "p",
+              className: "font-light",
+              child: [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+                El({
+                  element: "button",
+                  className: "font-medium",
+                  child: "view more..",
+                }),
+              ],
+            }),
           }),
+          //   El({
+          //     element: "p",
+          //     className: "font-light",
+          //     child: [
+          //       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente magni excepturi ",
+          //       El({
+          //         element: "span",
+          //         className: "font-medium",
+          //         child: "view more..",
+          //       }),
+          //     ],
+          //   }),
           El({
             element: "div",
             className: "w-full flex justify-between",
@@ -241,56 +254,14 @@ const shoeInfo = () => {
         element: "div",
         className: "w-full flex justify-between",
         child: [
-          //   El({
-          //     element: "div",
-          //     className: "",
-          //     child: [
-          //       El({
-          //         element: "p",
-          //         className: "",
-          //         child: ["Total Price"],
-          //       }),
-          //       El({
-          //         element: "p",
-          //         id: "totalPriceShoe",
-          //         className: "font-[700] text-[28px]",
-          //         child: "$240.00",
-          //       }),
-          //     ],
-          //   }),
-          //   El({
-          //     element: "button",
-          //     className:
-          //       "bg-black text-white h-16 w-60 flex justify-center items-center rounded-full",
-          //     // onclick: () => {
-          //     //   getDatauser(1).then((res) => {
-          //     //     const clone = res.data;
-          //     //     const previousOrder = find(clone.cart, { id: data.id });
-          //     //     let quantity = Number(
-          //     //       document.getElementById("counterShoe").firstChild.data
-          //     //     );
-          //     //     if (previousOrder) {
-          //     //       clone.cart.forEach((item) => {
-          //     //         if (item.id === previousOrder.id) {
-          //     //           item.quantity = previousOrder.quantity + quantity;
-          //     //         }
-          //     //       });
-          //     //     } else {
-          //     //       data.quantity = quantity;
-          //     //       clone.cart.push(data);
-          //     //     }
-          //     //     postproductone(1, clone);
-          //     //   });
-          //     // },
-          //     child: [`Add to Cart`],
-          //   }),
           El({
             element: "div",
-            className: "w-full flex justify-center items-center pl-4 py-4 mt-8",
+            className:
+              "w-full flex justify-center items-center gap-x-4 px-5 py-2.5 mt-8",
             child: [
               El({
                 element: "div",
-                className: "flex flex-col gap-y-1",
+                className: "flex flex-col gap-y-1 w-1/4",
                 child: [
                   El({
                     element: "span",
@@ -311,7 +282,7 @@ const shoeInfo = () => {
                 child: El({
                   element: "button",
                   className:
-                    "bg-black w-4/5 py-3 text-white flex justify-center items-center rounded-full gap-x-4 shadow shadow-gray-400",
+                    "bg-black w-full py-3 text-white flex justify-center items-center rounded-full gap-x-4 shadow shadow-gray-400",
                   child: [
                     El({
                       element: "ion-icon",
