@@ -1,10 +1,18 @@
 import El from "@/library/El";
 
-const counter = (width = "w-7", height = "h-7", fontSize = "text-sm") => {
-  let count = 0;
+const counter = ({
+  width = "w-7",
+  height = "h-7",
+  fontSize = "text-sm",
+  price,
+  totalPriceId,
+  firstNumber,
+}) => {
+  let count = firstNumber;
   const countEl = El({
     element: "span",
-    child: count.toString(),
+    id: "quantity",
+    child: count,
     className: `${width} ${height} bg-gray-100 text-gray-700 ${fontSize} flex justify-center items-center`,
   });
   const decrementBtn = El({
@@ -32,20 +40,20 @@ const counter = (width = "w-7", height = "h-7", fontSize = "text-sm") => {
     if (count > 0) {
       count--;
       countEl.textContent = count.toString();
-      const x = calculatePrice(count);
-      document.getElementById("totalPriceSpan").innerHTML = x;
+      const x = calculatePrice(count, price);
+      document.getElementById(totalPriceId).innerHTML = x;
     }
   });
 
   incrementBtn.addEventListener("click", () => {
     count++;
     countEl.textContent = count.toString();
-    const x = calculatePrice(count);
-    document.getElementById("totalPriceSpan").innerHTML = x;
+    const x = calculatePrice(count, price);
+    document.getElementById(totalPriceId).innerHTML = x;
   });
 
-  function calculatePrice(num, price = 100) {
-    return `$${num * price}`;
+  function calculatePrice(num, productPrice) {
+    return `$${num * productPrice}`;
   }
 
   return El({

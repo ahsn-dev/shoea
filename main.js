@@ -10,3 +10,4 @@ rootApp.appendChild(App());
 // setTimeout(() => {
 //   Router().navigate("/welcome");
 // }, 2000);
+// window.addEventListener('popstate', Router);

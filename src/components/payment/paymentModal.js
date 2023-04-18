@@ -1,3 +1,4 @@
+import Router from "@/functions/router";
 import El from "@/library/El";
 
 const paymentModal = () => {
@@ -28,6 +29,9 @@ const paymentModal = () => {
           }),
           El({
             element: "div",
+            onclick: () => {
+              Router().navigate("/myOrders");
+            },
             className: "px-4 mb-5",
             child: [
               El({
@@ -51,6 +55,9 @@ const paymentModal = () => {
           }),
           El({
             element: "div",
+            onclick: () => {
+              Router().navigate("/checkout");
+            },
             className: "px-4 mb-5",
             child: [
               El({

@@ -1,4 +1,5 @@
 import El from "@/library/El";
+import footer from "@/components/home/footer";
 
 const search = () => {
   return El({
@@ -29,6 +30,7 @@ const search = () => {
           }),
         ],
       }),
+      footer(),
     ],
   });
 };

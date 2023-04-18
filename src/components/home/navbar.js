@@ -1,3 +1,4 @@
+import Router from "@/functions/router";
 import El from "@/library/El";
 
 const homeNavbar = () => {
@@ -48,6 +49,9 @@ const homeNavbar = () => {
             element: "ion-icon",
             name: "heart-outline",
             className: "text-3xl",
+            onclick: () => {
+              Router().navigate("/wishlist");
+            },
           }),
         ],
       }),

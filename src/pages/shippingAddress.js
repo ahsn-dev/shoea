@@ -3,6 +3,7 @@ import radioButton from "@/components/address/radioButton";
 import addressCart from "@/components/address/addressCart";
 import El from "@/library/El";
 import "flowbite";
+import Router from "@/functions/router";
 
 const shippingAddress = () => {
   return El({
@@ -21,6 +22,9 @@ const shippingAddress = () => {
                 element: "ion-icon",
                 name: "arrow-back",
                 className: "text-xl",
+                onclick: () => {
+                  Router().navigate("/checkout");
+                },
               }),
               El({
                 element: "h1",
@@ -31,7 +35,7 @@ const shippingAddress = () => {
           }),
         ],
       }),
-      addressCart("Home", defaultSpan(), radioButton()),
+      addressCart("Home", defaultSpan(), radioButton(true)),
       addressCart("Office", "", radioButton()),
       addressCart("Apartment", "", radioButton()),
       addressCart("Parent's House", "", radioButton()),

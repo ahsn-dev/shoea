@@ -1,72 +1,40 @@
 import Router from "@/functions/router";
 import El from "@/library/El";
 
-const shoe = () => {
-  const items = [
-    {
-      imgSrc: "/assets/images/shoe.png",
-      title: "K-Swiss ista Train...",
-      price: "$ 85.00",
-    },
-    // {
-    //   imgSrc: "/assets/images/shoe2.png",
-    //   title: "K-Swiss ista Train...",
-    //   price: "$ 85.00",
-    // },
-    // {
-    //   imgSrc: "/assets/images/shoe.png",
-    //   title: "K-Swiss ista Train...",
-    //   price: "$ 85.00",
-    // },
-    // {
-    //   imgSrc: "/assets/images/shoe2.png",
-    //   title: "K-Swiss ista Train...",
-    //   price: "$ 85.00",
-    // },
-    // {
-    //   imgSrc: "/assets/images/shoe.png",
-    //   title: "K-Swiss ista Train...",
-    //   price: "$ 85.00",
-    // },
-    // {
-    //   imgSrc: "/assets/images/shoe2.png",
-    //   title: "K-Swiss ista Train...",
-    //   price: "$ 85.00",
-    // },
-  ];
-
+const shoe = (obj) => {
   return El({
     element: "div",
-    className: "flex flex-wrap justify-around items-center pl-2",
-    child: items.map((item) => {
-      return El({
-        element: "div",
-        onclick: () => {
-          Router().navigate("/shoeInfo");
-        },
-        className: "mb-6",
-        child: [
-          El({
-            element: "div",
-            className:
-              "w-40 h-40 bg-gray-100 rounded-3xl flex justify-center items-center mb-3",
-            child: El({
-              element: "img",
-              src: item.imgSrc,
-            }),
+    id: obj.id,
+    onclick: () => {
+      Router().navigate(`/products/${obj.id}`);
+    },
+    className: "flex flex-wrap w-1/2 px-2",
+    child: El({
+      element: "div",
+      className: "mb-6 w-full flex flex-col",
+      child: [
+        El({
+          element: "div",
+          className:
+            "w-full h-40 bg-gray-100 rounded-3xl flex justify-center items-center mb-4",
+          child: El({
+            element: "img",
+            className: "w-full h-full max-h-full rounded-3xl",
+            src: obj.images[0],
           }),
-          El({
-            element: "p",
-            child: item.title,
-            className: "font-bold text-lg mb-1",
-          }),
-          El({
-            element: "span",
-            child: item.price,
-            className: "font-medium text-base",
-          }),
-        ],
-      });
+        }),
+        El({
+          element: "p",
+          child: obj.title,
+          className:
+            "w-[80%] text-shoea text-lg font-bold whitespace-nowrap truncate",
+        }),
+        El({
+          element: "span",
+          child: `$${obj.price}`,
+          className: "font-medium text-base",
+        }),
+      ],
     }),
   });
 };

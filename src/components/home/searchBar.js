@@ -1,8 +1,12 @@
+import Router from "@/functions/router";
 import El from "@/library/El";
 
 const homeSearch = () => {
   return El({
     element: "div",
+    onclick: () => {
+      Router().navigate("/search");
+    },
     className: "relative px-4 pb-6",
     child: [
       El({

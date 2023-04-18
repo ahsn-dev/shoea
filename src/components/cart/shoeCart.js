@@ -1,6 +1,6 @@
 import El from "@/library/El";
 
-const shoeCart = (deleteButton, variableItems) => {
+const shoeCart = (obj, deleteButton, variableItems) => {
   return El({
     element: "div",
     child: El({
@@ -15,7 +15,7 @@ const shoeCart = (deleteButton, variableItems) => {
               "w-24 h-24 bg-gray-100 rounded-3xl flex justify-center items-center",
             child: El({
               element: "img",
-              src: "/assets/images/shoe.png",
+              src: obj.image,
               className: "p-1",
             }),
           }),
@@ -30,7 +30,7 @@ const shoeCart = (deleteButton, variableItems) => {
               child: [
                 El({
                   element: "h2",
-                  child: "Air Jordan 3 Retro",
+                  child: obj.name,
                 }),
                 deleteButton,
               ],
@@ -42,11 +42,11 @@ const shoeCart = (deleteButton, variableItems) => {
                 El({
                   element: "div",
                   child: "",
-                  className: "w-4 h-4 rounded-full bg-black",
+                  className: `w-4 h-4 rounded-full bg-${obj.color.hex}`,
                 }),
                 El({
                   element: "span",
-                  child: "Black",
+                  child: obj.color.name,
                   className: "text-xs text-gray-500",
                 }),
                 El({
@@ -56,7 +56,7 @@ const shoeCart = (deleteButton, variableItems) => {
                 }),
                 El({
                   element: "span",
-                  child: "Size = 42",
+                  child: obj.size,
                   className: "text-xs text-gray-500",
                 }),
               ],
@@ -67,7 +67,7 @@ const shoeCart = (deleteButton, variableItems) => {
               child: [
                 El({
                   element: "span",
-                  child: "$105.00",
+                  child: `$${obj.price}`,
                 }),
                 variableItems,
               ],

@@ -3,8 +3,30 @@ import shoeCart from "@/components/cart/shoeCart";
 import counter from "@/components/cart/counter";
 import footer from "@/components/home/footer";
 import El from "@/library/El";
+import axiosInstance from "@/api/axiosInstance";
 
-const cart = () => {
+const myCart = (id) => {
+  const container = El({
+    element: "div",
+  });
+
+  axiosInstance.get(`/orders?userId=${id}`).then((res) => {
+    console.log(res.data);
+    res.data.forEach((element) => {
+      container.append(
+        shoeCart(
+          element,
+          removeItem(),
+          counter({
+            totalPriceId: "totalPriceCart",
+            price: 245,
+            firstNumber: 1,
+          })
+        )
+      );
+    });
+  });
+
   return El({
     element: "div",
     className: "bg-gray-100 w-full h-screen",
@@ -23,7 +45,7 @@ const cart = () => {
                 child: [
                   El({
                     element: "img",
-                    src: "/assets/images/logo.png",
+                    src: "http://localhost:5180/assets/images/logo.png",
                     className: "w-4 h-4",
                   }),
                   El({
@@ -49,7 +71,7 @@ const cart = () => {
           }),
         ],
       }),
-      shoeCart(removeItem(), counter()),
+      container,
       El({
         element: "div",
         className:
@@ -66,7 +88,10 @@ const cart = () => {
               }),
               El({
                 element: "span",
-                child: "$585.00",
+                id: "totalPriceCart",
+                // child: container.childNodes..reduce((acc, item) => {
+                //   return item + acc;
+                // }),
                 className: "font-bold text-lg",
               }),
             ],
@@ -99,4 +124,4 @@ const cart = () => {
   });
 };
 
-export default cart;
+export default myCart;

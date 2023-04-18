@@ -1,4 +1,4 @@
-import axiosInstance from "./axiosInstance";
+import axiosInstance from "../api/axiosInstance";
 import Router from "./router";
 import starter from "@/pages/starter";
 

@@ -1,24 +1,28 @@
+import Router from "@/functions/router";
 import El from "@/library/El";
 
 const brands = [
-  "nike",
-  "adidas",
-  "puma",
-  "asics",
-  "reebok",
-  "new Ba..",
-  "converse",
-  "more..",
+  "Nike",
+  "Adidas",
+  "Puma",
+  "Asics",
+  "Reebok",
+  "NewBalance",
+  "Converse",
+  "More..",
 ];
 
 const brandsCategory = () => {
   return El({
     element: "div",
     className:
-      "px-4 pb-7 flex flex-wrap justify-center items-center gap-x-5 gap-y-8",
+      "px-4 pb-7 flex flex-wrap justify-center items-center gap-x-5 gap-y-8 text-[13px]",
     child: brands.map((brand) =>
       El({
         element: "div",
+        onclick: () => {
+          Router().navigate(`/${brand}`);
+        },
         className: "flex flex-col items-center",
         child: [
           El({

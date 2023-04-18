@@ -5,6 +5,7 @@ import paypal from "@/components/payment/paypal";
 import wallet from "@/components/payment/wallet";
 import paymentCart from "@/components/payment/paymentCart";
 import El from "@/library/El";
+import Router from "@/functions/router";
 
 const paymentMethod = () => {
   return El({
@@ -21,6 +22,9 @@ const paymentMethod = () => {
             child: [
               El({
                 element: "button",
+                onclick: () => {
+                  Router().navigate("/checkout");
+                },
                 className: "flex",
                 child: El({
                   element: "ion-icon",
@@ -52,11 +56,11 @@ const paymentMethod = () => {
         child: "Select the payment method you want to use.",
         className: "mb-6 text-sm text-gray-600 px-7",
       }),
-      paymentCart(wallet(), "My Wallet"),
-      paymentCart(paypal(), "Pay Pal"),
-      paymentCart(google(), "Google"),
-      paymentCart(apple(), "Apple Pay"),
-      paymentCart(mastercard(), ".... .... .... .... 4679"),
+      paymentCart(wallet(), "My Wallet", "$9.379", true),
+      paymentCart(paypal(), "Pay Pal", ""),
+      paymentCart(google(), "Google", ""),
+      paymentCart(apple(), "Apple Pay", ""),
+      paymentCart(mastercard(), ".... .... .... .... 4679", ""),
 
       El({
         element: "div",
@@ -64,6 +68,9 @@ const paymentMethod = () => {
           "w-full fixed bottom-0 flex justify-center items-center py-4 bg-white rounded-tl-2xl rounded-tr-2xl shadow-2xl",
         child: El({
           element: "button",
+          onclick: () => {
+            Router().navigate("/paymentModal");
+          },
           className:
             " bg-black text-white flex justify-center items-center gap-x-4 rounded-full w-11/12 py-4",
           child: [

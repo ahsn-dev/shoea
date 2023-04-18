@@ -2,25 +2,27 @@ import counter from "@/components/cart/counter";
 import Router from "@/functions/router";
 import El from "@/library/El";
 
-const shoeInfo = () => {
+const shoeInfo = (obj) => {
   // add tick to the buttons of color section
   function addTick(button) {
     const buttons = document.querySelectorAll("button");
     buttons.forEach((btn) => {
       if (btn !== button) {
+        btn.dataset.action = false;
         const ticks = btn.querySelectorAll(".tick");
-        ticks.forEach((tick) => tick.remove());
+        ticks.forEach((tick) => {
+          tick.remove();
+        });
       }
     });
-
     const svg = El({
       element: "ion-icon",
       name: "checkmark",
       className:
         "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white tick",
     });
-
     button.appendChild(svg);
+    button.dataset.action = true;
   }
 
   // change color and bg of buttons in size section
@@ -29,8 +31,10 @@ const shoeInfo = () => {
     if (activeButton) {
       activeButton.classList.remove("bg-black", "text-white");
       activeButton.classList.add("bg-white", "text-black");
+      activeButton.dataset.action = false;
     }
     activeButton = button;
+    button.dataset.action = true;
     activeButton.classList.remove("bg-white", "text-black");
     activeButton.classList.add("bg-black", "text-white");
   }
@@ -58,7 +62,7 @@ const shoeInfo = () => {
           El({
             element: "img",
             className: "w-full h-full",
-            src: "public/products/adidas/1.webp",
+            src: obj.images[0],
           }),
         ],
       }),
@@ -73,7 +77,7 @@ const shoeInfo = () => {
               El({
                 element: "p",
                 className: "text-3xl font-medium",
-                child: "Running Sportwear",
+                child: obj.title,
               }),
               El({
                 element: "button",
@@ -133,24 +137,12 @@ const shoeInfo = () => {
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
                 El({
                   element: "button",
-                  className: "font-medium",
+                  className: "font-medium text-sm",
                   child: "view more..",
                 }),
               ],
             }),
           }),
-          //   El({
-          //     element: "p",
-          //     className: "font-light",
-          //     child: [
-          //       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente magni excepturi ",
-          //       El({
-          //         element: "span",
-          //         className: "font-medium",
-          //         child: "view more..",
-          //       }),
-          //     ],
-          //   }),
           El({
             element: "div",
             className: "w-full flex justify-between",
@@ -166,12 +158,13 @@ const shoeInfo = () => {
                   }),
                   El({
                     element: "div",
+                    id: "size",
                     className: "flex gap-2",
                     child: [
                       El({
                         element: "button",
                         className: `border border-black w-8 h-8 rounded-full`,
-                        child: 40,
+                        child: obj.size[2],
                         onclick: (event) => {
                           setActiveButton(event.target);
                         },
@@ -179,7 +172,7 @@ const shoeInfo = () => {
                       El({
                         element: "button",
                         className: `border border-black w-8 h-8 rounded-full`,
-                        child: 41,
+                        child: obj.size[1],
                         onclick: (event) => {
                           setActiveButton(event.target);
                         },
@@ -187,7 +180,7 @@ const shoeInfo = () => {
                       El({
                         element: "button",
                         className: `border border-black w-8 h-8 rounded-full`,
-                        child: 42,
+                        child: obj.size[0],
                         onclick: (event) => {
                           setActiveButton(event.target);
                         },
@@ -211,21 +204,21 @@ const shoeInfo = () => {
                     child: [
                       El({
                         element: "button",
-                        className: `w-8 h-8 rounded-full bg-green-600 relative`,
+                        className: `w-8 h-8 rounded-full bg-${obj.color[0]} relative`,
                         onclick: (event) => {
                           addTick(event.target);
                         },
                       }),
                       El({
                         element: "button",
-                        className: `w-8 h-8 rounded-full bg-yellow-400 relative`,
+                        className: `w-8 h-8 rounded-full bg-${obj.color[1]} relative`,
                         onclick: (event) => {
                           addTick(event.target);
                         },
                       }),
                       El({
                         element: "button",
-                        className: `w-8 h-8 rounded-full bg-red-600 relative`,
+                        className: `w-8 h-8 rounded-full bg-${obj.color[2]} relative`,
                         onclick: (event) => {
                           addTick(event.target);
                         },
@@ -245,7 +238,14 @@ const shoeInfo = () => {
                 className: "font-semibold text-sm",
                 child: ["Quantity"],
               }),
-              counter("w-10", "h-10", "text-xl"),
+              counter(
+                "w-10",
+                "h-10",
+                "text-xl",
+                obj.price,
+                "totalPriceSpan",
+                1
+              ),
             ],
           }),
         ],
@@ -271,7 +271,7 @@ const shoeInfo = () => {
                   El({
                     element: "span",
                     id: "totalPriceSpan",
-                    child: "$0",
+                    child: `$${obj.price}`,
                     className: "font-bold text-lg",
                   }),
                 ],
@@ -281,6 +281,15 @@ const shoeInfo = () => {
                 className: "w-full flex justify-center items-center",
                 child: El({
                   element: "button",
+                  onclick: () => {
+                    document.getElementById("quantity");
+                    Array.from(
+                      document.getElementById("size").childNodes
+                    ).forEach((item) => {
+                      return item.dataset.action === true;
+                    });
+                    document.getElementById("color");
+                  },
                   className:
                     "bg-black w-full py-3 text-white flex justify-center items-center rounded-full gap-x-4 shadow shadow-gray-400",
                   child: [

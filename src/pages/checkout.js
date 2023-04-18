@@ -2,9 +2,33 @@ import El from "@/library/El";
 import shoeCart from "@/components/cart/shoeCart";
 import addressCart from "@/components/address/addressCart";
 import editButton from "@/components/address/editButton";
-import countItems from "@/components/cart/countItems";
+import Router from "@/functions/router";
+import axiosInstance from "@/api/axiosInstance";
+import removeItem from "@/components/cart/removeItem";
+import counter from "@/components/cart/counter";
 
 const checkout = () => {
+  const container = El({
+    element: "div",
+  });
+
+  axiosInstance.get(`/orders?userId=${1}`).then((res) => {
+    res.data.forEach((element) => {
+      if (element.isActive) {
+        container.append(
+          shoeCart(
+            element,
+            removeItem(),
+            counter({
+              totalPriceId: "totalPriceCart",
+              price: 245,
+              firstNumber: 1,
+            })
+          )
+        );
+      }
+    });
+  });
   return El({
     element: "div",
     className: "items-center bg-gray-50",
@@ -20,6 +44,9 @@ const checkout = () => {
               El({
                 element: "button",
                 className: "flex",
+                onclick: () => {
+                  Router().navigate("/home");
+                },
                 child: El({
                   element: "ion-icon",
                   name: "arrow-back-outline",
@@ -57,7 +84,7 @@ const checkout = () => {
       }),
       El({
         element: "div",
-        child: shoeCart("", countItems()),
+        child: container,
         className: "mb-4",
       }),
       El({
@@ -74,6 +101,9 @@ const checkout = () => {
         className: "w-full",
         child: El({
           element: "div",
+          onclick: () => {
+            Router().navigate("/shippingType");
+          },
           className:
             "flex items-center justify-between text-left p-4 rounded-2xl mx-4 bg-white",
           child: [
@@ -191,6 +221,9 @@ const checkout = () => {
           "w-full flex justify-center items-center py-4 bg-white rounded-tl-2xl rounded-tr-2xl shadow-2xl",
         child: El({
           element: "button",
+          onclick: () => {
+            Router().navigate("/paymentMethod");
+          },
           className:
             " bg-black text-white flex justify-center items-center gap-x-4 rounded-full w-11/12 py-4",
           child: [

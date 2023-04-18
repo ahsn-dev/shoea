@@ -5,8 +5,21 @@ import brandsCategory from "@/components/home/brandsCategory";
 import filterBrands from "@/components/home/filterBrands";
 import shoe from "@/components/cart/shoe";
 import footer from "@/components/home/footer";
+import axiosInstance from "@/api/axiosInstance";
+import Router from "@/functions/router";
 
 const home = () => {
+  const cards = El({
+    element: "div",
+    className: "flex flex-wrap justify-center items-center p-4",
+  });
+  axiosInstance.get("/products").then((res) => {
+    cards.append(
+      ...res.data.map((item) => {
+        return shoe(item);
+      })
+    );
+  });
   const app = El({
     element: "div",
     child: [
@@ -23,15 +36,17 @@ const home = () => {
             className: "font-medium text-lg text-black",
           }),
           El({
-            element: "a",
-            href: "",
+            element: "button",
             child: "See All",
             className: "text-gray-500 text-sm",
+            onclick: () => {
+              Router().navigate("/mostPopular");
+            },
           }),
         ],
       }),
       filterBrands(),
-      shoe(),
+      cards,
       footer(),
     ],
   });
