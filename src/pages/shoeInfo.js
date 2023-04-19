@@ -238,14 +238,14 @@ const shoeInfo = (obj) => {
                 className: "font-semibold text-sm",
                 child: ["Quantity"],
               }),
-              counter(
-                "w-10",
-                "h-10",
-                "text-xl",
-                obj.price,
-                "totalPriceSpan",
-                1
-              ),
+              counter({
+                width: "w-10",
+                height: "h-10",
+                fontSize: "text-xl",
+                totalPriceId: "totalPriceCart",
+                price: 245,
+                firstNumber: 1,
+              }),
             ],
           }),
         ],

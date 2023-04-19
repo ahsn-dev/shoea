@@ -31,6 +31,7 @@ const shoeCart = (obj, deleteButton, variableItems) => {
                 El({
                   element: "h2",
                   child: obj.name,
+                  className: "font-semibold",
                 }),
                 deleteButton,
               ],
@@ -42,7 +43,7 @@ const shoeCart = (obj, deleteButton, variableItems) => {
                 El({
                   element: "div",
                   child: "",
-                  className: `w-4 h-4 rounded-full bg-${obj.color.hex}`,
+                  className: `w-4 h-4 rounded-full bg-` + obj.color.hex,
                 }),
                 El({
                   element: "span",
@@ -56,7 +57,7 @@ const shoeCart = (obj, deleteButton, variableItems) => {
                 }),
                 El({
                   element: "span",
-                  child: obj.size,
+                  child: `Size = ${obj.size}`,
                   className: "text-xs text-gray-500",
                 }),
               ],
@@ -68,6 +69,7 @@ const shoeCart = (obj, deleteButton, variableItems) => {
                 El({
                   element: "span",
                   child: `$${obj.price}`,
+                  className: "font-semibold",
                 }),
                 variableItems,
               ],

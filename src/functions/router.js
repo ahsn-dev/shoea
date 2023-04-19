@@ -18,6 +18,7 @@ import paymentMethod from "@/pages/paymentMethod";
 import paymentModal from "@/components/payment/paymentModal";
 import search from "@/pages/search";
 import myOrders from "@/pages/myOrders";
+import PageNotFound from "@/pages/pageNotFound";
 
 const route = new Navigo("/");
 
@@ -110,7 +111,8 @@ const Router = () => {
       });
     })
     .notFound(() => {
-      console.log("page not found!!!");
+      root.innerHTML = "";
+      root.append(PageNotFound());
     });
   route.resolve();
   return route;

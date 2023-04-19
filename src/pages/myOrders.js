@@ -1,8 +1,8 @@
+import El from "@/library/El";
 import axiosInstance from "@/api/axiosInstance";
 import shoeCart from "@/components/cart/shoeCart";
 import footer from "@/components/home/footer";
-import El from "@/library/El";
-import "flowbite";
+// import "flowbite";
 
 const myOrders = (id) => {
   const activeContainer = El({
@@ -23,7 +23,7 @@ const myOrders = (id) => {
   });
   return El({
     element: "div",
-    className: "bg-gray-100 w-full h-screen",
+    className: "bg-gray-50 w-full h-screen",
     child: [
       El({
         element: "div",
@@ -79,7 +79,7 @@ const myOrders = (id) => {
       }),
       El({
         element: "div",
-        className: "mb-4 border-b border-gray-200 dark:border-gray-700",
+        className: "mb-4 border-b border-gray-200",
         child: El({
           element: "ul",
           className:
@@ -94,14 +94,23 @@ const myOrders = (id) => {
               role: "presentation",
               child: El({
                 element: "button",
-                className: "inline-block p-4 border-b-2 rounded-t-lg",
-                id: "profile-tab",
-                dataTabsTarget: "#profile",
+                onclick: () => {
+                  document
+                    .getElementById("active-tab")
+                    .classList.add("border-black");
+                  document
+                    .getElementById("completed-tab")
+                    .classList.remove("border-black");
+                },
+                className:
+                  "inline-block p-4 border-b-2 border-black rounded-t-lg",
+                id: "active-tab",
+                dataTabsTarget: "#active",
                 type: "button",
                 role: "tab",
-                ariaControls: "profile",
+                ariaControls: "active",
                 ariaSelected: "false",
-                child: "Profile",
+                child: "Active",
               }),
             }),
             El({
@@ -110,14 +119,22 @@ const myOrders = (id) => {
               role: "presentation",
               child: El({
                 element: "button",
+                onclick: () => {
+                  document
+                    .getElementById("completed-tab")
+                    .classList.add("border-black");
+                  document
+                    .getElementById("active-tab")
+                    .classList.remove("border-black");
+                },
                 className: "inline-block p-4 border-b-2 rounded-t-lg",
-                id: "dashboard-tab",
-                dataTabsTarget: "#dashboard",
+                id: "completed-tab",
+                dataTabsTarget: "#completed",
                 type: "button",
                 role: "tab",
-                ariaControls: "dashboard",
+                ariaControls: "completed",
                 ariaSelected: "false",
-                child: "Dashboard",
+                child: "Completed",
               }),
             }),
           ],
@@ -130,17 +147,17 @@ const myOrders = (id) => {
           El({
             element: "div",
             className: "hidden p-4 rounded-lg bg-gray-50",
-            id: "profile",
+            id: "active",
             role: "tabpanel",
-            ariaLabelledby: "profile-tab",
+            ariaLabelledby: "active-tab",
             child: activeContainer,
           }),
           El({
             element: "div",
             className: "hidden p-4 rounded-lg bg-gray-50",
-            id: "dashboard",
+            id: "completed",
             role: "tabpanel",
-            ariaLabelledby: "dashboard-tab",
+            ariaLabelledby: "completed-tab",
             child: completedContainer,
           }),
         ],
