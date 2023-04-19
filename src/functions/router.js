@@ -18,7 +18,7 @@ import paymentMethod from "@/pages/paymentMethod";
 import paymentModal from "@/components/payment/paymentModal";
 import search from "@/pages/search";
 import myOrders from "@/pages/myOrders";
-import PageNotFound from "@/pages/pageNotFound";
+// import PageNotFound from "@/pages/pageNotFound";
 
 const route = new Navigo("/");
 
@@ -110,9 +110,21 @@ const Router = () => {
         root.append(singleProduct(cards, params.data.name));
       });
     })
-    .notFound(() => {
+    // .notFound(() => {
+    //   root.innerHTML = "";
+    //   root.append(PageNotFound());
+    // });
+    .on("/search/:value", ({ data }) => {
       root.innerHTML = "";
-      root.append(PageNotFound());
+      axiosInstance.get(`/products?brand=${data.value}`).then((res) => {
+        const shoesArray = res.data;
+        const shoeArrayResult = shoesArray.map((item) => {
+          return shoe(item);
+        });
+        shoeArrayResult.forEach((element) => {
+          document.getElementById("showResult").append(element);
+        });
+      });
     });
   route.resolve();
   return route;

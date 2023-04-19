@@ -62,13 +62,13 @@ const listMaker = (array) => {
 };
 
 window.addEventListener("click", (e) => {
-  const searchElement = document.getElementById("showSearchResult");
+  const searchElement = document.getElementById("showResult");
   if (
     searchElement &&
-    e.target.id !== "showSearchResult" &&
+    e.target.id !== "showResult" &&
     e.target.id !== "searchInput"
   ) {
-    searchElement.remove();
+    searchElement.innerHTML = "";
   }
 });
 
