@@ -35,7 +35,7 @@ const myCart = (id) => {
 
   const cart = El({
     element: "div",
-    className: "bg-white h-screen px-5 py-10",
+    className: "bg-gray-50 h-screen px-5 py-10",
     child: [
       // drawer
       El({
@@ -185,7 +185,7 @@ const myCart = (id) => {
       }),
       El({
         element: "div",
-        child: footer(),
+        child: footer("cart"),
       }),
     ],
   });
