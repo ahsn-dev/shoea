@@ -18,6 +18,7 @@ import paymentMethod from "@/pages/paymentMethod";
 import paymentModal from "@/components/payment/paymentModal";
 import search from "@/pages/search";
 import myOrders from "@/pages/myOrders";
+import PageNotFound from "@/pages/pageNotFound";
 // import PageNotFound from "@/pages/pageNotFound";
 
 const route = new Navigo("/");
@@ -114,18 +115,25 @@ const Router = () => {
     //   root.innerHTML = "";
     //   root.append(PageNotFound());
     // });
-    .on("/search/:value", ({ data }) => {
-      root.innerHTML = "";
-      axiosInstance.get(`/products?brand=${data.value}`).then((res) => {
-        const shoesArray = res.data;
-        const shoeArrayResult = shoesArray.map((item) => {
+    .on("/home/search/:searchValue", ({ data }) => {
+      axiosInstance.get(`/products?brand=${data.searchValue}`).then(res => {
+        let cartsArr = res.data
+        let cartsElement = cartsArr.map((item) => {
           return shoe(item);
-        });
-        shoeArrayResult.forEach((element) => {
-          document.getElementById("showResult").append(element);
-        });
-      });
-    });
+        })
+        let resultContainer = document.getElementById('showResult');
+        resultContainer.innerHTML = '';
+        console.log(cartsElement)
+        resultContainer.append(...cartsElement)
+      })
+    })
+    .on('/search/pageNotFound', () => {
+      // root.innerHTML = '';
+      // root.append(PageNotFound())
+      let resultContainer = document.getElementById('showResult')
+      resultContainer.innerHTML = ''
+      resultContainer.append(PageNotFound())
+    })
   route.resolve();
   return route;
 };

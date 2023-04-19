@@ -44,6 +44,7 @@ const search = () => {
       El({
         element: "div",
         child: "",
+        className: '',
         id: "showResult",
       }),
       footer(),

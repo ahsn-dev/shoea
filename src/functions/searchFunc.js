@@ -9,7 +9,6 @@ const searchFunc = (e) => {
     // console.log(oldSearches)
 
     if (oldSearches) {
-      console.log(oldSearches);
 
       oldSearches.push(e.target.value);
 
@@ -18,7 +17,7 @@ const searchFunc = (e) => {
       localStorage.setItem("searchHistory", JSON.stringify(oldSearches));
 
       document
-        .getElementById("home-container")
+        .getElementById("showResult")
         .append(showSearchElem(oldSearches));
 
       showSearchPage(e.target.value);
@@ -32,7 +31,7 @@ const searchFunc = (e) => {
       localStorage.setItem("searchHistory", JSON.stringify(searchHisArr));
 
       document
-        .getElementById("home-container")
+        .getElementById("showResult")
         .append(showSearchElem(searchHisArr));
 
       showSearchPage(searchHisArr[0]);

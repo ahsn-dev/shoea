@@ -8,7 +8,7 @@ const showSearchHistory = () => {
   // console.log(oldSearch)
 
   if (oldSearch) {
-    document.getElementById("home-container").append(showSearchElem(oldSearch));
+    document.getElementById("showResult").append(showSearchElem(oldSearch));
   }
 };
 

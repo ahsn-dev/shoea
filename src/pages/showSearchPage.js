@@ -1,19 +1,28 @@
-import axiosInstance from "@/functions/axiosInstance";
-
-import renderProducts from "@/functions/renderProducts";
+import axiosInstance from "@/api/axiosInstance";
+import shoe from "@/components/cart/shoe";
 
 import Router from "@/functions/router";
 
-const showSearchPage = (text) => {
-  // console.log(text)
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+const showSearchPage = (txt) => {
+  let text = capitalizeFirstLetter(txt)
+  console.log(text)
   axiosInstance.get(`/products?brand=${text}`).then((res) => {
-    let carts = renderProducts(res.data);
+    let cartsArr = res.data
+    console.log(cartsArr)
+    let cartsElement = cartsArr.map((item) => {
+      return shoe(item);
+    })
 
-    if (carts.length) {
+
+
+    if (cartsElement.length) {
       Router().navigate(`/home/search/${text}`);
     } else {
-      Router().navigate("/search/notfound");
+      Router().navigate("/search/pageNotFound");
     }
 
     // carts.forEach((cart) => {
