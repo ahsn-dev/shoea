@@ -16,7 +16,7 @@ const shoeCart = (obj, deleteButton, variableItems) => {
             child: El({
               element: "img",
               src: obj.image,
-              className: "p-1",
+              className: "rounded-3xl",
             }),
           }),
         }),

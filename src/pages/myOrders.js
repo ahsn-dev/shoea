@@ -82,14 +82,15 @@ const myOrders = (id) => {
         className: "mb-4 border-b border-gray-200 dark:border-gray-700",
         child: El({
           element: "ul",
-          className: "flex flex-wrap -mb-px text-sm font-medium text-center",
+          className:
+            "w-full flex justify-evenly -mb-px text-sm font-medium text-center",
           id: "myTab",
           dataTabsToggle: "#myTabContent",
           role: "tablist",
           child: [
             El({
               element: "li",
-              className: "mr-2",
+              className: "",
               role: "presentation",
               child: El({
                 element: "button",
@@ -105,7 +106,7 @@ const myOrders = (id) => {
             }),
             El({
               element: "li",
-              className: "mr-2",
+              className: "",
               role: "presentation",
               child: El({
                 element: "button",
