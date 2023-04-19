@@ -11,7 +11,8 @@ import Router from "@/functions/router";
 const home = () => {
   const cards = El({
     element: "div",
-    className: "flex flex-wrap justify-center items-center p-4",
+    id: "homeCards",
+    className: "flex flex-wrap justify-center items-center p-4 pb-10",
   });
   axiosInstance.get("/products").then((res) => {
     cards.append(

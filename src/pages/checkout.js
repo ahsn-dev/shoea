@@ -12,9 +12,15 @@ const checkout = () => {
     element: "div",
   });
 
+  const totalPrice = El({
+    element: "span",
+    className: "text-gray-700 text-lg",
+  });
   axiosInstance.get(`/orders?userId=${1}`).then((res) => {
+    let total = 0;
     res.data.forEach((element) => {
       if (element.isActive) {
+        total += element.quantity * element.price;
         container.append(
           shoeCart(
             element,
@@ -22,12 +28,13 @@ const checkout = () => {
             counter({
               totalPriceId: "totalPriceCart",
               price: 245,
-              firstNumber: 1,
+              firstNumber: element.quantity,
             })
           )
         );
       }
     });
+    totalPrice.append(total.toLocaleString());
   });
   return El({
     element: "div",
@@ -170,11 +177,7 @@ const checkout = () => {
                 child: "Amount",
                 className: "text-gray-600 text-lg",
               }),
-              El({
-                element: "span",
-                child: "$585.00",
-                className: "text-gray-700 text-lg",
-              }),
+              totalPrice,
             ],
           }),
           El({

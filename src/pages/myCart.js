@@ -9,7 +9,12 @@ import Router from "@/functions/router";
 const myCart = (id) => {
   const container = El({
     element: "div",
-    onclick: () => {},
+    onclick: (e) => {
+      if (e.target.dataset.action === "delete") {
+        document.getElementById("drawer").classList.remove("h-[0px]");
+        document.getElementById("drawer").classList.add("h-[300px]");
+      }
+    },
   });
 
   axiosInstance.get(`/orders?userId=${id}`).then((res) => {
@@ -30,7 +35,7 @@ const myCart = (id) => {
 
   const cart = El({
     element: "div",
-    className: "bg-[#F3F3F3] h-screen px-5 py-10",
+    className: "bg-white h-screen px-5 py-10",
     child: [
       // drawer
       El({
@@ -84,7 +89,7 @@ const myCart = (id) => {
       }),
     ],
   });
-  console.log(cart);
+
   return El({
     element: "div",
     className: "bg-gray-100 w-full h-screen",
@@ -130,6 +135,7 @@ const myCart = (id) => {
         ],
       }),
       container,
+      cart,
       El({
         element: "div",
         className:
