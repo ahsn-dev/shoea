@@ -1,4 +1,6 @@
+import axiosInstance from "@/api/axiosInstance";
 import El from "@/library/El";
+import shoe from "../cart/shoe";
 
 const brands = [
   { name: "All" },
@@ -26,9 +28,11 @@ const filterBrands = () => {
       if (index === clickedIndex) {
         button.style.backgroundColor = "#343A40";
         button.style.color = "white";
+        button.dataset.active = "true";
       } else {
         button.style.backgroundColor = "white";
         button.style.color = "#343A40";
+        button.dataset.active = "false";
       }
     });
   };
@@ -50,6 +54,31 @@ const filterBrands = () => {
         className: "overflow-scroll scrollbar-hide pl-6",
         child: El({
           element: "div",
+          onclick: (e) => {
+            Array.from(e.currentTarget.childNodes).forEach((item, index) => {
+              if (index > 0) {
+                if (item.dataset.active === "true") {
+                  document.getElementById("homeCards").innerHTML = "";
+                  axiosInstance
+                    .get(`/products?brand=${item.textContent}`)
+                    .then((res) => {
+                      res.data.forEach((item) => {
+                        document.getElementById("homeCards").append(shoe(item));
+                      });
+                    });
+                }
+              } else {
+                if (item.dataset.active === "true") {
+                  document.getElementById("homeCards").innerHTML = "";
+                  axiosInstance.get("/products").then((res) => {
+                    res.data.forEach((item) => {
+                      document.getElementById("homeCards").append(shoe(item));
+                    });
+                  });
+                }
+              }
+            });
+          },
           className: "flex gap-2 justify-around items-center py-5 w-max",
           child: buttons,
         }),

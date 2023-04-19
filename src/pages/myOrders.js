@@ -2,7 +2,6 @@ import El from "@/library/El";
 import axiosInstance from "@/api/axiosInstance";
 import shoeCart from "@/components/cart/shoeCart";
 import footer from "@/components/home/footer";
-// import "flowbite";
 
 const myOrders = (id) => {
   const activeContainer = El({
@@ -95,6 +94,8 @@ const myOrders = (id) => {
               child: El({
                 element: "button",
                 onclick: () => {
+                  document.getElementById("active").classList.remove("hidden");
+                  document.getElementById("completed").classList.add("hidden");
                   document
                     .getElementById("active-tab")
                     .classList.add("border-black");
@@ -120,6 +121,10 @@ const myOrders = (id) => {
               child: El({
                 element: "button",
                 onclick: () => {
+                  document.getElementById("active").classList.add("hidden");
+                  document
+                    .getElementById("completed")
+                    .classList.remove("hidden");
                   document
                     .getElementById("completed-tab")
                     .classList.add("border-black");
@@ -146,7 +151,7 @@ const myOrders = (id) => {
         child: [
           El({
             element: "div",
-            className: "hidden p-4 rounded-lg bg-gray-50",
+            className: "p-4 rounded-lg bg-gray-50",
             id: "active",
             role: "tabpanel",
             ariaLabelledby: "active-tab",

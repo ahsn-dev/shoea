@@ -1,7 +1,7 @@
 import El from "@/library/El";
 import footer from "@/components/home/footer";
-import searchFunc from "@/functions/searchFunc";
-import showSearchHistory from "@/functions/showSearchHistory";
+// import searchFunc from "@/functions/searchFunc";
+// import showSearchHistory from "@/functions/showSearchHistory";
 
 const search = () => {
   return El({
@@ -13,13 +13,13 @@ const search = () => {
         child: [
           El({
             element: "input",
-            onkeyup: (e) => {
+            onkeyup: () => {
               // searchKeyUp(e);
-              searchFunc(e);
+              // searchFunc(e);
             },
-            onfocus: (e) => {
+            onfocus: () => {
               // searchFocus();
-              showSearchHistory(e);
+              // showSearchHistory(e);
             },
             type: "text",
             placeholder: "Search",
