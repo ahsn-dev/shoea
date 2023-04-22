@@ -1,4 +1,6 @@
+import axiosInstance from "@/api/axiosInstance";
 import counter from "@/components/cart/counter";
+import shoeColors from "@/components/cart/shoeColors";
 import Router from "@/functions/router";
 import El from "@/library/El";
 
@@ -13,6 +15,8 @@ const shoeInfo = (obj) => {
         ticks.forEach((tick) => {
           tick.remove();
         });
+      } else {
+        btn.dataset.action = true;
       }
     });
     const svg = El({
@@ -31,12 +35,13 @@ const shoeInfo = (obj) => {
     if (activeButton) {
       activeButton.classList.remove("bg-black", "text-white");
       activeButton.classList.add("bg-white", "text-black");
-      activeButton.dataset.action = false;
+      activeButton.dataset.action = "false";
+    } else {
+      activeButton = button;
+      activeButton.classList.remove("bg-white", "text-black");
+      activeButton.classList.add("bg-black", "text-white");
+      activeButton.dataset.action = "true";
     }
-    activeButton = button;
-    button.dataset.action = true;
-    activeButton.classList.remove("bg-white", "text-black");
-    activeButton.classList.add("bg-black", "text-white");
   }
 
   return El({
@@ -145,7 +150,7 @@ const shoeInfo = (obj) => {
           }),
           El({
             element: "div",
-            className: "w-full flex justify-between",
+            className: "w-full flex justify-between items-center gap-x-12",
             child: [
               El({
                 element: "div",
@@ -191,38 +196,26 @@ const shoeInfo = (obj) => {
               }),
               El({
                 element: "div",
-                className: "flex flex-col gap-y-2",
+                className: "space-y-4 overflow-hidden",
                 child: [
                   El({
                     element: "p",
                     className: "font-semibold text-base",
-                    child: ["Color"],
+                    child: "Color",
                   }),
                   El({
                     element: "div",
-                    className: "flex gap-2",
+                    className: "flex gap-3 overflow-x-scroll scrollbar-hide",
+                    id: "colors",
+                    onclick: (e) => {
+                      addTick(e.target);
+                    },
                     child: [
-                      El({
-                        element: "button",
-                        className: `w-8 h-8 rounded-full bg-${obj.color[0]} relative`,
-                        onclick: (event) => {
-                          addTick(event.target);
-                        },
-                      }),
-                      El({
-                        element: "button",
-                        className: `w-8 h-8 rounded-full bg-${obj.color[1]} relative`,
-                        onclick: (event) => {
-                          addTick(event.target);
-                        },
-                      }),
-                      El({
-                        element: "button",
-                        className: `w-8 h-8 rounded-full bg-${obj.color[2]} relative`,
-                        onclick: (event) => {
-                          addTick(event.target);
-                        },
-                      }),
+                      shoeColors("bg-blue-500"),
+                      shoeColors("bg-red-500"),
+                      shoeColors("bg-yellow-500"),
+                      shoeColors("bg-rose-500"),
+                      shoeColors("bg-green-500"),
                     ],
                   }),
                 ],
@@ -242,7 +235,7 @@ const shoeInfo = (obj) => {
                 width: "w-10",
                 height: "h-10",
                 fontSize: "text-xl",
-                totalPriceId: "totalPriceCart",
+                totalPriceId: "totalPriceSpan",
                 price: 245,
                 firstNumber: 1,
               }),
@@ -282,13 +275,39 @@ const shoeInfo = (obj) => {
                 child: El({
                   element: "button",
                   onclick: () => {
-                    document.getElementById("quantity");
+                    const order = {
+                      isActive: true,
+                      productId: obj.id,
+                      price: obj.price,
+                      image: obj.images[0],
+                      id: crypto.randomUUID(),
+                      userId: 1,
+                      name: obj.title,
+                    };
+                    order.quantity =
+                      document.getElementById("quantity").textContent;
+                    order.size = 42;
                     Array.from(
                       document.getElementById("size").childNodes
                     ).forEach((item) => {
-                      return item.dataset.action === true;
+                      if (item.dataset.action === "true") {
+                        order.size = +item.textContent;
+                      }
                     });
-                    document.getElementById("color");
+                    Array.from(
+                      document.getElementById("colors").childNodes
+                    ).forEach((item) => {
+                      if (item.dataset.action === "true") {
+                        order.color = {
+                          name: "Red",
+                          hex: "red-500",
+                        };
+                      }
+                    });
+                    document.getElementById("colors");
+                    axiosInstance.post("/orders", order).then(() => {
+                      Router().navigate("/myOrders");
+                    });
                   },
                   className:
                     "bg-black w-full py-3 text-white flex justify-center items-center rounded-full gap-x-4 shadow shadow-gray-400",

@@ -2,9 +2,13 @@
   "users": [
     {
       "id": 1,
-      "email": "qwe@gmail.com",
+      "email": "amir@gmail.com",
       "password": "1234",
-      "wishlist": [1, 2, 3],
+      "wishlist": [
+        1,
+        2,
+        3
+      ],
       "cart": [
         {
           "totalPrice": 980,
@@ -40,7 +44,9 @@
       "id": 2,
       "email": "mmd@.com",
       "password": "1234",
-      "wishlist": [1],
+      "wishlist": [
+        1
+      ],
       "cart": [
         {
           "id": "1",
@@ -59,36 +65,73 @@
       ]
     }
   ],
+  "discount": [
+    {
+      "id": 1,
+      "name": "golden",
+      "value": 30
+    }
+  ],
   "orders": [
     {
-      "id": 3,
+      "isActive": true,
+      "productId": 4,
+      "price": 320,
+      "image": "http://localhost:5180/data/nike/27e28757-e4b0-4f74-bdf1-f20c956c9049.webp",
+      "id": "1203ae87-9a0e-40cd-911a-8aedb7259be8",
       "userId": 1,
-      "name": "Air Jordan 3 Retro",
-      "productId": 1,
-      "price": 245,
+      "name": "Tasty Wooden Chicken",
+      "quantity": "2",
       "size": 42,
       "color": {
         "name": "Red",
         "hex": "red-500"
-      },
-      "isActive": true,
-      "quantity": 3,
-      "image": "http://localhost:5180/data/adidas/b7beee7c32d4438aaba3acb6001c2e7b_9366.webp"
+      }
     },
     {
-      "id": 5,
+      "isActive": true,
+      "productId": 6,
+      "price": 245,
+      "image": "http://localhost:5180/data/nike/bd7d1abd-cb60-4d2d-b60d-8002cc850839.webp",
+      "id": "e0eeb86c-f8c1-4d5a-968f-52123a1e185b",
       "userId": 1,
-      "name": "Air Jordan 2",
-      "productId": 2,
-      "price": 300,
-      "size": 45,
+      "name": "Tasty Wooden Chicken",
+      "quantity": "2",
+      "size": 42,
       "color": {
-        "name": "Blue",
-        "hex": "blue-500"
-      },
+        "name": "Red",
+        "hex": "red-500"
+      }
+    },
+    {
       "isActive": false,
-      "quantity": 4,
-      "image": "http://localhost:5180/data/nike/baa2520d-49da-4a27-ab2c-7fb133fb3008.webp"
+      "productId": 7,
+      "price": 245,
+      "image": "http://localhost:5180/data/adidas/698e41ae0196408eb16aa7fb008046ad_9366.webp",
+      "id": "1a85c095-1e57-4598-8451-cd9284ee028f",
+      "userId": 1,
+      "name": "Tasty Wooden Chicken",
+      "quantity": "2",
+      "size": 42,
+      "color": {
+        "name": "Red",
+        "hex": "red-500"
+      }
+    },
+    {
+      "isActive": true,
+      "productId": 1,
+      "price": 245,
+      "image": "http://localhost:5180/data/adidas/b7beee7c32d4438aaba3acb6001c2e7b_9366.webp",
+      "id": "7e59d6db-f05f-45af-81c5-595f9d3f558b",
+      "userId": 1,
+      "name": "Tasty Wooden Chicken",
+      "quantity": "2",
+      "size": 42,
+      "color": {
+        "name": "Red",
+        "hex": "red-500"
+      }
     }
   ],
   "products": [
@@ -97,8 +140,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Adidas",
       "images": [
         "http://localhost:5180/data/adidas/b7beee7c32d4438aaba3acb6001c2e7b_9366.webp",
@@ -111,8 +163,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Adidas",
       "images": [
         "http://localhost:5180/data/adidas/b47d77eba6f945ea8dabac210127b11e_9366.webp",
@@ -125,8 +186,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 271,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Nike",
       "images": [
         "http://localhost:5180/data/nike/baa2520d-49da-4a27-ab2c-7fb133fb3008.webp",
@@ -139,8 +209,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 320,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Nike",
       "images": [
         "http://localhost:5180/data/nike/27e28757-e4b0-4f74-bdf1-f20c956c9049.webp",
@@ -153,8 +232,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Nike",
       "images": [
         "http://localhost:5180/data/nike/d0b94722-d603-4e66-829c-51f1801ec3fa.webp",
@@ -167,8 +255,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Nike",
       "images": [
         "http://localhost:5180/data/nike/bd7d1abd-cb60-4d2d-b60d-8002cc850839.webp",
@@ -181,8 +278,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Adidas",
       "images": [
         "http://localhost:5180/data/adidas/698e41ae0196408eb16aa7fb008046ad_9366.webp",
@@ -195,8 +301,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Adidas",
       "images": [
         "http://localhost:5180/data/adidas/d44fa06fc83f4644b7e8acbc01160e1b_9366.webp",
@@ -209,8 +324,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Puma",
       "images": [
         "http://localhost:5180/public/data/puma/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۶%20(2).jpg",
@@ -223,8 +347,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Puma",
       "images": [
         "http://localhost:5180/public/data/puma/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۶%20(3).jpg",
@@ -237,8 +370,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Puma",
       "images": [
         "http://localhost:5180/public/data/puma/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۶%20(4).jpg",
@@ -251,8 +393,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Puma",
       "images": [
         "http://localhost:5180/public/data/puma/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۶.jpg",
@@ -265,8 +416,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Puma",
       "images": [
         "http://localhost:5180/public/data/puma/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۷%20(2).jpg",
@@ -279,8 +439,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Puma",
       "images": [
         "http://localhost:5180/public/data/puma/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۸%20(3).jpg",
@@ -293,8 +462,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/14897_Comp_H_Image1.jpg",
@@ -307,8 +485,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/15266_Comp_H_Image1%20(1).jpg",
@@ -321,8 +508,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۵%20(5).jpg",
@@ -335,8 +531,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۵%20(4).jpg",
@@ -349,8 +554,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/photo_۲۰۲۳-۰۴-۰۹_۱۹-۳۷-۲۵%20(3).jpg",
@@ -363,8 +577,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/14897_Comp_T_Image.jpg",
@@ -377,8 +600,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "NewBalance",
       "images": [
         "http://localhost:5180/public/data/newbalance/14897_Comp_H_Image2.jpg",
@@ -391,8 +623,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Converse",
       "images": [
         "http://localhost:5180/public/data/canvas/A06113C_A_08X1.jpg",
@@ -405,8 +646,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Converse",
       "images": [
         "http://localhost:5180/public/data/canvas/A06063C_A_08X1.jpg",
@@ -419,8 +669,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Converse",
       "images": [
         "http://localhost:5180/public/data/canvas/A03499C_A_08X1.jpg",
@@ -433,8 +692,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Converse",
       "images": [
         "http://localhost:5180/public/data/canvas/A03464C_A_08X1.jpg",
@@ -447,8 +715,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Converse",
       "images": [
         "http://localhost:5180/public/data/canvas/560251C_G_08X1.jpg",
@@ -461,8 +738,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Converse",
       "images": [
         "http://localhost:5180/public/data/canvas/CTAS_Hi_camo_pair_08X1.jpg",
@@ -475,8 +761,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Asics",
       "images": [
         "http://localhost:5180/public/data/asics/photo_2023-04-09_21-02-24.jpg",
@@ -489,8 +784,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Asics",
       "images": [
         "http://localhost:5180/public/data/asics/کفش-پیاده-روی-زنانه-اسیکس-مدل-asics-patriot-13-کد-1012b312-401.jpg",
@@ -503,8 +807,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Asics",
       "images": [
         "http://localhost:5180/public/data/asics/کفش-پیاده-روی-زنانه-اسیکس-مدل-gel-excite-9-کد-1012b182-600.jpg",
@@ -517,8 +830,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Asics",
       "images": [
         "http://localhost:5180/public/data/asics/کفش-پیاده-روی-و-دویدن-اسیکس-زنانه-asics-dynablast.jpg",
@@ -531,8 +853,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Asics",
       "images": [
         "http://localhost:5180/public/data/asics/کفش-پیاده-روی-و-دویدن-اسیکس-مردانه-asics-dynablast.jpg",
@@ -545,8 +876,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Asics",
       "images": [
         "http://localhost:5180/public/data/asics/کفش-پیاده-روی-و-دویدن-اسیکس-زنانه-asics-noosa-tri-14.jpg",
@@ -559,8 +899,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Reebok",
       "images": [
         "http://localhost:5180/public/data/reebock/51b48c5b65984bed84cbaf4100f82e09_9366.webp",
@@ -573,8 +922,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Reebok",
       "images": [
         "http://localhost:5180/public/data/reebock/757aa342a9b24b8ba914af88001a011b_9366.webp",
@@ -587,8 +945,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Reebok",
       "images": [
         "http://localhost:5180/public/data/reebock/1383ffd853864a4d99a7af9b013f07c3_9366.webp",
@@ -601,8 +968,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Reebok",
       "images": [
         "http://localhost:5180/public/data/reebock/d5d76dcc47b748118cf2af290186c867_9366.webp",
@@ -615,8 +991,17 @@
       "title": "Tasty Wooden Chicken",
       "description": " Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iste vel impedit illo aliquid delectus voluptatum, distinctio deserunt tenetur voluptates?",
       "price": 245,
-      "size": [45, 42, 40],
-      "color": ["red-500", "green-500", "blue-500", "yellow-500"],
+      "size": [
+        45,
+        42,
+        40
+      ],
+      "color": [
+        "red-500",
+        "green-500",
+        "blue-500",
+        "yellow-500"
+      ],
       "brand": "Reebok",
       "images": [
         "http://localhost:5180/public/data/reebock/df2d6571d58741549cfdaf290186eec2_9366.webp",

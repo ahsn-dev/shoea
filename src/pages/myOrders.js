@@ -2,6 +2,8 @@ import El from "@/library/El";
 import axiosInstance from "@/api/axiosInstance";
 import shoeCart from "@/components/cart/shoeCart";
 import footer from "@/components/home/footer";
+import orderStatus from "@/components/cart/orderStatus";
+import Router from "@/functions/router";
 
 const myOrders = (id) => {
   const activeContainer = El({
@@ -14,9 +16,13 @@ const myOrders = (id) => {
   axiosInstance.get(`/orders?userId=${id}`).then((res) => {
     res.data.forEach((element) => {
       if (element.isActive) {
-        activeContainer.append(shoeCart(element));
+        activeContainer.append(
+          shoeCart(element, "", orderStatus("Track Order"))
+        );
       } else {
-        completedContainer.append(shoeCart(element));
+        completedContainer.append(
+          shoeCart(element, "", orderStatus("Leave Review"))
+        );
       }
     });
   });
@@ -54,6 +60,9 @@ const myOrders = (id) => {
                 child: [
                   El({
                     element: "button",
+                    onclick: () => {
+                      Router().navigate("/search");
+                    },
                     className: "flex",
                     child: El({
                       element: "ion-icon",

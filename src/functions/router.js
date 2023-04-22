@@ -19,7 +19,6 @@ import paymentModal from "@/components/payment/paymentModal";
 import search from "@/pages/search";
 import myOrders from "@/pages/myOrders";
 import PageNotFound from "@/pages/pageNotFound";
-// import PageNotFound from "@/pages/pageNotFound";
 
 const route = new Navigo("/");
 
@@ -27,7 +26,11 @@ const Router = () => {
   const root = document.getElementById("root");
   route
     .on("/", () => {
+      root.innerHTML = "";
       root.append(starter());
+      setTimeout(() => {
+        Router().navigate("/welcome");
+      }, 2000);
     })
     .on("/welcome", () => {
       root.innerHTML = "";
@@ -95,10 +98,6 @@ const Router = () => {
     .on("/wishlist", () => {
       axiosInstance.get(`/users/1`).then((res) => {
         root.innerHTML = "";
-        console.log(res.data);
-        // const cards = res.data.map((item) => {
-        //   return wishlistShoe(item);
-        // });
         root.append(wishlist(res.data.wishlist));
       });
     })
@@ -111,29 +110,26 @@ const Router = () => {
         root.append(singleProduct(cards, params.data.name));
       });
     })
-    // .notFound(() => {
-    //   root.innerHTML = "";
-    //   root.append(PageNotFound());
-    // });
     .on("/home/search/:searchValue", ({ data }) => {
-      axiosInstance.get(`/products?brand=${data.searchValue}`).then(res => {
-        let cartsArr = res.data
+      axiosInstance.get(`/products?brand=${data.searchValue}`).then((res) => {
+        let cartsArr = res.data;
         let cartsElement = cartsArr.map((item) => {
           return shoe(item);
-        })
-        let resultContainer = document.getElementById('showResult');
-        resultContainer.innerHTML = '';
-        console.log(cartsElement)
-        resultContainer.append(...cartsElement)
-      })
+        });
+        let resultContainer = document.getElementById("showResult");
+        resultContainer.innerHTML = "";
+        resultContainer.append(...cartsElement);
+      });
     })
-    .on('/search/pageNotFound', () => {
-      // root.innerHTML = '';
-      // root.append(PageNotFound())
-      let resultContainer = document.getElementById('showResult')
-      resultContainer.innerHTML = ''
-      resultContainer.append(PageNotFound())
+    .on("/search/pageNotFound", () => {
+      let resultContainer = document.getElementById("showResult");
+      resultContainer.innerHTML = "";
+      resultContainer.append(PageNotFound());
     })
+    .on("/search", () => {
+      root.innerHTML = "";
+      root.append(search());
+    });
   route.resolve();
   return route;
 };

@@ -33,63 +33,6 @@ const myCart = (id) => {
     });
   });
 
-  const cart = El({
-    element: "div",
-    className: "bg-gray-50 h-screen px-5 py-10",
-    child: [
-      // drawer
-      El({
-        element: "div",
-        id: "drawer",
-        onclick: (e) => {
-          console.log(e.currentTarget.childNodes[0].id);
-          document
-            .getElementById("cardsContainer")
-            .childNodes.forEach((item) => {
-              if (item.id === e.currentTarget.childNodes[0].id) {
-                axiosInstance.get(`/orders/${item.id}`).then((res) => {
-                  console.log(res.data);
-                  item.querySelector("#quantityNumber").textContent =
-                    res.data.quantity;
-                });
-              }
-            });
-        },
-        child: [
-          El({
-            element: "div",
-            className: "font-bold text-2xl text-center py-5",
-            child: "Remove From Cart?",
-          }),
-          El({
-            element: "div",
-            className: "border-t border-b py-10 grow",
-            id: "drawerCard",
-          }),
-          El({ element: "div" }),
-        ],
-        className:
-          "flex flex-col justify-center justify-between w-full h-[0px] py-5 px-6 duration-300 absolute bottom-0 left-0 z-30 bg-white rounded-t-[70px] hidden",
-      }),
-      // drawer background
-      El({
-        element: "div",
-        id: "background",
-        onclick: () => {
-          document.getElementById("background").classList.add("hidden");
-          document.getElementById("drawer").classList.remove("h-[50vh]");
-          document.getElementById("drawer").classList.add("h-[0px]");
-          setTimeout(() => {
-            document.getElementById("drawerCard").innerHTML = "";
-            document.getElementById("drawer").classList.add("hidden");
-          }, 100);
-        },
-        className:
-          "h-screen w-screen bg-black bg-opacity-20 absolute top-0 left-0 z-20 hidden",
-      }),
-    ],
-  });
-
   return El({
     element: "div",
     className: "bg-gray-100 w-full h-screen",
@@ -135,7 +78,7 @@ const myCart = (id) => {
         ],
       }),
       container,
-      cart,
+      // cart,
       El({
         element: "div",
         className:
@@ -153,9 +96,6 @@ const myCart = (id) => {
               El({
                 element: "span",
                 id: "totalPriceCart",
-                // child: container.childNodes..reduce((acc, item) => {
-                //   return item + acc;
-                // }),
                 child: "$508.00",
                 className: "font-bold text-lg",
               }),

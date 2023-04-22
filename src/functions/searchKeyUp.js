@@ -1,4 +1,3 @@
-// import El from "@/library/El";
 import showSearchResult from "./showSearchResult";
 
 const searchKeyUp = (e) => {

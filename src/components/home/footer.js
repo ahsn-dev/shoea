@@ -3,7 +3,7 @@ import El from "@/library/El";
 
 const footer = () => {
   const icons = [
-    { name: "home", secondName: "home-outline", text: "Home", route: "/home" },
+    { name: "home-outline", secondName: "home", text: "Home", route: "/home" },
     { name: "bag-outline", secondName: "bag", text: "Cart", route: "/myCart" },
     {
       name: "cart-outline",
@@ -33,7 +33,6 @@ const footer = () => {
         const secondName = icon.secondName;
         const iconEl = document.querySelector(`ion-icon[name="${icon.name}"]`);
         if (iconEl) {
-          console.log(iconEl);
           iconEl.setAttribute(
             "name",
             name === iconEl.getAttribute("name") ? secondName : name

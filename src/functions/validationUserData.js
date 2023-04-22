@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import axiosInstance from "../api/axiosInstance";
 import Router from "./router";
 import starter from "@/pages/starter";
@@ -6,13 +7,12 @@ const validationUserData = (email, pass) => {
   axiosInstance("/users").then((res) => {
     const data = res.data[0];
     if (data.email === email && data.password === pass) {
+      Cookies.set("token", "1234");
       const root = document.getElementById("root");
       root.innerHTML = "";
       root.append(starter());
 
       setTimeout(() => {
-        // const starter = document.getElementById("starter");
-        // starter.classList.add("-translate-x-full");
         Router().navigate("/home");
       }, 2000);
     } else {

@@ -18,7 +18,7 @@ const showSearchResult = (array) => {
             element: "button",
             child: "Clear All",
             onclick: (e) => {
-              console.log(e.target.closest("button").innerText);
+              e.target.closest("button").innerText;
             },
           }),
         ],
@@ -41,17 +41,15 @@ const listMaker = (array) => {
           element: "p",
           className: "flex-1",
           child: item,
-          onclick: (e) => {
+          onclick: () => {
             // get data of local storage
-            console.log(e);
           },
         }),
         El({
           element: "ion-icon",
           name: "close-circle-outline",
-          onclick: (e) => {
+          onclick: () => {
             // delete search history
-            console.log(e);
           },
         }),
       ],

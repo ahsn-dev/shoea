@@ -7,6 +7,7 @@ import axiosInstance from "@/api/axiosInstance";
 const wishlist = (array) => {
   const container = El({
     element: "div",
+    className: "flex flex-wrap",
   });
   array.forEach((element) => {
     axiosInstance.get(`/products/${element}`).then((res) => {

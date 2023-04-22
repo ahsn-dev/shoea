@@ -1,7 +1,7 @@
 import El from "@/library/El";
 import footer from "@/components/home/footer";
-// import searchFunc from "@/functions/searchFunc";
-// import showSearchHistory from "@/functions/showSearchHistory";
+import searchFunc from "@/functions/searchFunc";
+import showSearchHistory from "@/functions/showSearchHistory";
 
 const search = () => {
   return El({
@@ -13,13 +13,13 @@ const search = () => {
         child: [
           El({
             element: "input",
-            onkeyup: () => {
+            onkeyup: (e) => {
               // searchKeyUp(e);
-              // searchFunc(e);
+              searchFunc(e);
             },
             onfocus: () => {
               // searchFocus();
-              // showSearchHistory(e);
+              showSearchHistory();
             },
             type: "text",
             placeholder: "Search",
@@ -44,7 +44,7 @@ const search = () => {
       El({
         element: "div",
         child: "",
-        className: '',
+        className: "flex flex-wrap relative",
         id: "showResult",
       }),
       footer(),

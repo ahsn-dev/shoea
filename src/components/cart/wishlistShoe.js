@@ -11,10 +11,10 @@ const wishlistShoe = (obj) => {
     className: "flex flex-wrap w-1/2 px-2",
     child: El({
       element: "div",
-      className: "flex flex-wrap justify-around items-center pl-2",
+      className: "flex flex-wrap",
       child: El({
         element: "div",
-        className: "mb-6",
+        className: "mb-6 flex flex-col items-center",
         child: [
           El({
             element: "div",
@@ -23,7 +23,7 @@ const wishlistShoe = (obj) => {
             child: [
               El({
                 element: "img",
-                src: obj.images,
+                src: obj.images[0],
               }),
               El({
                 element: "div",
@@ -40,11 +40,11 @@ const wishlistShoe = (obj) => {
           El({
             element: "p",
             child: obj.title,
-            className: "font-bold text-lg mb-1",
+            className: "font-bold text-lg mb-1 pl-4",
           }),
           El({
             element: "div",
-            className: "flex items-center gap-x-2 mb-1",
+            className: "flex self-start gap-x-2 mb-1 pl-4",
             child: [
               El({
                 element: "ion-icon",
@@ -63,7 +63,7 @@ const wishlistShoe = (obj) => {
               }),
               El({
                 element: "div",
-                className: "bg-gray-100 py-0.5 px-2 rounded",
+                className: "bg-gray-100 py-[2px] px-[6px] rounded",
                 child: El({
                   element: "span",
                   child: "6,641 sold",
@@ -74,8 +74,8 @@ const wishlistShoe = (obj) => {
           }),
           El({
             element: "span",
-            child: obj.price,
-            className: "font-medium text-base",
+            child: `$${obj.price}`,
+            className: "font-medium text-base self-start pl-4",
           }),
         ],
       }),

@@ -64,7 +64,7 @@ const shoeCart = (obj, deleteButton, variableItems) => {
             }),
             El({
               element: "div",
-              className: "flex justify-between items-center gap-x-10",
+              className: "flex justify-between items-center gap-x-4",
               child: [
                 El({
                   element: "span",

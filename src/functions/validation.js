@@ -16,14 +16,5 @@ const validation = (e) => {
   }
   return status;
 };
-// window.onload = function () {
-//   const email = Cookies.get("email");
-//   const password = Cookies.get("password");
-//   if (email !== undefined && password !== undefined) {
-//     document.getElementById("email").value = email;
-//     document.getElementById("password").value = password;
-//     document.getElementById("rememberMe").checked = true;
-//   }
-// };
 
 export default validation;

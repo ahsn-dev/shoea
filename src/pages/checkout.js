@@ -14,6 +14,7 @@ const checkout = () => {
 
   const totalPrice = El({
     element: "span",
+    id: "totalPrice",
     className: "text-gray-700 text-lg",
   });
   axiosInstance.get(`/orders?userId=${1}`).then((res) => {
@@ -34,7 +35,7 @@ const checkout = () => {
         );
       }
     });
-    totalPrice.append(total.toLocaleString());
+    totalPrice.append(total);
   });
   return El({
     element: "div",
@@ -149,12 +150,26 @@ const checkout = () => {
         child: [
           El({
             element: "input",
+            id: "discount",
             placeholder: "Enter Promo Code",
             className:
               "bg-gray-100 text-slate-500 font-light py-4 pl-4 rounded-2xl outline-none w-full",
           }),
           El({
             element: "button",
+            onclick: () => {
+              const discountInput = document.getElementById("discount");
+              axiosInstance
+                .get(`/discount?name=${discountInput.value}`)
+                .then((res) => {
+                  if (res.data.length > 0) {
+                    document.getElementById("totalCount").textContent =
+                      (+document.getElementById("totalPrice").textContent *
+                        res.data[0].value) /
+                      100;
+                  }
+                });
+            },
             className: "flex",
             child: El({
               element: "ion-icon",
@@ -211,6 +226,7 @@ const checkout = () => {
               }),
               El({
                 element: "span",
+                id: "totalCount",
                 child: "-",
                 className: "text-gray-700 font-bold text-lg",
               }),

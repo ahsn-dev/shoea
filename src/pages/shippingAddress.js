@@ -58,6 +58,9 @@ const shippingAddress = () => {
           "w-full fixed bottom-0 flex justify-center items-center py-4 bg-white rounded-tl-2xl rounded-tr-2xl shadow-2xl",
         child: El({
           element: "button",
+          onclick: () => {
+            Router().navigate("/checkout");
+          },
           className:
             " bg-black text-white flex justify-center items-center gap-x-4 rounded-full w-11/12 py-4",
           child: [
